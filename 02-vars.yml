@@ -4,7 +4,7 @@
     URL: play.google.com
   tasks:
     - name: Print Play level variable
-      ansible.builtin.deubg:
+      ansible.builtin.debug:
         msg: URL = {{ URL }}
 
   roles:
