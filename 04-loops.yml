@@ -8,3 +8,11 @@
         - Karan
         - Rohan
         - Deeksha
+
+    - name: Loop Demo 2
+      ansible.builtin.debug:
+        msg: Hello, {{ item.name }}. Age of Yours is {{ item.age }} years.
+      loop:
+        - { name: "Karan", age: 21 }
+        - { name: "Deeksha", age: 32 }
+        - { name: "Rohan", age: 36 }
