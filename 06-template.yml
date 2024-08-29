@@ -1,0 +1,8 @@
+- name: Template Demo
+  hosts: localhost
+  tasks:
+    - name: Copy A file
+      ansible.builtin.template:
+        src: sample.txt
+        dest: /tmp/sample.txt
+
