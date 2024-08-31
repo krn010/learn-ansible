@@ -1,0 +1,12 @@
+- name: Rescue
+  hosts: localhost
+  tasks:
+    - name: block
+      block:
+       - name: Run shell command
+         ansible.builtin.shell: exit 1
+
+      rescue:
+       - name: Say Hi
+         ansible.builtin.debug:
+          msg: Karan has rescued the code block
