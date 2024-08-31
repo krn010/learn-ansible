@@ -1,0 +1,10 @@
+- name: Ignore
+  hosts: localhost
+  tasks:
+    - name: Run shell command
+      ansible.builtin.shell: exit 1
+      ignore_errors: yes
+
+    - name: Say Hi
+      ansible.builtin.debug:
+        msg: HI
