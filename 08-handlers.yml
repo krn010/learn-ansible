@@ -1,14 +1,13 @@
-- name: Hanlers Demo
+- name: Handlers Demo
   hosts: localhost
   tasks:
     - name: Copy A file
       ansible.builtin.template:
         src: sample.txt
         dest: /tmp/sample.txt
-
-     notify: Say Hello Again
+      notify: Say Hello Again
 
   handlers:
     - name: Say Hello Again
       ansible.builtin.debug:
-        Hello , {{ name }} again!!
+        msg: Hello , {{ name }} again!!
