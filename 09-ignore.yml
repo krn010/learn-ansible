@@ -8,3 +8,4 @@
     - name: Say Hi
       ansible.builtin.debug:
         msg: HI
+
