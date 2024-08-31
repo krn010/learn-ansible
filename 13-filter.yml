@@ -1,0 +1,15 @@
+- name: Filter
+  hosts: localhost
+  vars:
+    URL: https://nginx.org/download/nginx-1.25.3.zip
+
+  tasks:
+    - name: Filter
+      ansible.builtin.unarchive:
+        src: "{{ URL }}"
+        dest: /tmp
+        remote_src: yes
+
+    - name: URL split
+      ansible.builtin.debug:
+        msg: "{{ URL | split('/') | last | regex_replace('.zip') }}"
